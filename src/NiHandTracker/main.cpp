@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 	//chatter_pub = nh.advertise<std_msgs::String>("/gesture/point", 1000);
 	chatter_pub = nh.advertise<geometry_msgs::PointStamped>("/gesture_raw", 1000);
     	//string configFilename = ros::package::getPath("openni_tracker") + "/openni_tracker.xml";
-    	string configFilename = "/home/skuba/skuba_athome/Gesture/SamplesConfig.xml";
+    	string configFilename = "/home/skuba/skuba_athome/gesture_detection/SamplesConfig.xml";
 	ROS_INFO(configFilename.c_str());
     	rc = g_context.InitFromXmlFile(configFilename.c_str());
  
