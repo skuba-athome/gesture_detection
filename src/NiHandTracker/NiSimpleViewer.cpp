@@ -122,12 +122,12 @@ XnStatus SimpleViewer::Init(int argc, char **argv)
 		return rc;
 	}
 
-	rc = m_rContext.FindExistingNode(XN_NODE_TYPE_IMAGE, m_image);
+	/*rc = m_rContext.FindExistingNode(XN_NODE_TYPE_IMAGE, m_image);
 	if (rc != XN_STATUS_OK)
 	{
 		printf("No image node exists! Check your XML.");
 		return rc;
-	}
+	}*/
 
 	m_depth.GetMetaData(m_depthMD);
 	/*m_image.GetMetaData(m_imageMD);
