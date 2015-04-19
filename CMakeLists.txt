@@ -136,14 +136,15 @@ link_directories(
 # add_executable(gesture_detection_node src/gesture_detection_node.cpp)
 
 add_executable(openni_tracker src/openni_tracker.cpp)
-add_executable(hand_tracker src/hand_tracker.cpp)
-
+#add_executable(hand_tracker src/hand_tracker.cpp)
+add_executable(NIHandtracker src/NiHandTracker/main.cpp src/NiHandTracker/NiHandViewer.cpp src/NiHandTracker/NiTrailHistory.cpp src/NiHandTracker/NiHandTracker.cpp src/NiHandTracker/NiSimpleViewer.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(gesture_detection_node gesture_detection_generate_messages_cpp)
 
 add_dependencies(openni_tracker ${catkin_EXPORTED_TARGETS})
-add_dependencies(hand_tracker ${catkin_EXPORTED_TARGETS})
+#add_dependencies(hand_tracker ${catkin_EXPORTED_TARGETS})
+add_dependencies(NIHandtracker ${catkin_EXPORTED_TARGETS})
 ## Specify libraries to link a library or executable target against
 # target_link_libraries(gesture_detection_node
 #   ${catkin_LIBRARIES}
@@ -155,10 +156,16 @@ target_link_libraries(openni_tracker ${catkin_LIBRARIES})
 target_link_libraries(openni_tracker orocos-kdl)
 target_link_libraries(openni_tracker ${roscpp_LIBRARIES})
 
-target_link_libraries(hand_tracker OpenNI)
-target_link_libraries(hand_tracker ${catkin_LIBRARIES})
-target_link_libraries(hand_tracker orocos-kdl)
-target_link_libraries(hand_tracker ${roscpp_LIBRARIES})
+#target_link_libraries(hand_tracker OpenNI)
+#target_link_libraries(hand_tracker ${catkin_LIBRARIES})
+#target_link_libraries(hand_tracker orocos-kdl)
+#target_link_libraries(hand_tracker ${roscpp_LIBRARIES})
+
+target_link_libraries(NIHandtracker OpenNI)
+target_link_libraries(NIHandtracker ${catkin_LIBRARIES})
+target_link_libraries(NIHandtracker orocos-kdl)
+target_link_libraries(NIHandtracker ${roscpp_LIBRARIES})
+
 
 install(TARGETS openni_tracker RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 install(FILES openni_tracker.xml DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
