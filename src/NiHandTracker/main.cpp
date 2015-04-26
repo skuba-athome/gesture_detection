@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 	ros::init(argc, argv, "openni_hand_tracker");
     	ros::NodeHandle nh;
 	//chatter_pub = nh.advertise<std_msgs::String>("/gesture/point", 1000);
-	chatter_pub = nh.advertise<geometry_msgs::PointStamped>("hand_points", 1000);
+	chatter_pub = nh.advertise<geometry_msgs::PointStamped>("points", 1000);
 	string configFilename = ros::package::getPath("gesture_detection") + "/SamplesConfig.xml";
     //string configFilename = "/home/skuba/skuba_athome/gesture_detection/SamplesConfig.xml";
 	
