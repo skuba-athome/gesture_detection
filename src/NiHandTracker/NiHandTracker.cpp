@@ -205,7 +205,7 @@ XnStatus HandTracker::Init()
 	rc = m_GestureGenerator.Create(m_rContext);
 	if (rc != XN_STATUS_OK)
 	{
-		printf("Unable to create GestureGenerator.");
+		printf("Unable to create GestureGenerator.\n");
 		return rc;
 	}
 
