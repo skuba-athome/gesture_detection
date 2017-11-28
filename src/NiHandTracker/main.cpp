@@ -61,7 +61,7 @@ int main(int argc, char* argv[])
 
 	ROS_INFO(configFilename.c_str());
     	rc = g_context.InitFromXmlFile(configFilename.c_str());
- 
+
 	// Create a context with default settings
 	//rc = g_context.InitFromXmlFile(SAMPLE_XML_PATH, g_scriptNode, &errors);
 	if (rc == XN_STATUS_NO_NODE_PRESENT)
